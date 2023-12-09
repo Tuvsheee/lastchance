@@ -1,0 +1,1 @@
+<footer class="footer"> © MARINA Admin Table <a href="https://www.wrappixel.com/">MarinaHotel.com</a> </footer>
