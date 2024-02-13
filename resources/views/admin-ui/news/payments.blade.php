@@ -10,7 +10,6 @@
 
 @section('body-section')
 <div class="row">
-                    column
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
@@ -30,17 +29,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($allNews as $n)
+                                            @foreach($allPayments as $n)
                                             <tr>
                                                 <td>{{$n->id}}</td>
-                                                <td>{{$n->title}}</td>
-                                                <td>{{$n->description}}</td>
-                                                <td>dsvjs@example.com</td>
-                                                <td>Mongolia</td>
-                                                <td>Ulaanbaatar</td>
-                                                <td>123 Main street</td>
-                                                <td>10001</td>
-                                                <td>$500.00</td>
+                                                <td>{{$n->first_name}}</td>
+                                                <td>{{$n->last_name}}</td>
+                                                <td>{{$n->email}}</td>
+                                                <td>{{$n->country}}</td>
+                                                <td>{{$n->city_name}}</td>
+                                                <td>{{$n->address}}</td>
+                                                <td>{{$n->postal_code}}</td>
+                                                <td>{{$n->total_price}}</td>
+                                                
                                             </tr>
                                             @endforeach
                                         </tbody>

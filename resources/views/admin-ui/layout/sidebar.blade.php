@@ -10,7 +10,7 @@
                 </nav>
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="{{route('news')}}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{route('pay_store')}}" aria-expanded="false"><i
                                     class="mdi mdi-table"></i><span class="hide-menu">Төлбөр</span></a></li>
                     </ul>
                 </nav>

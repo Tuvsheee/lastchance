@@ -16,7 +16,7 @@
         <div id="left-column" class="column">
             <h2>Complete your reservation</h2>
 
-                <form id="paymentForm" action="{{ route('reservation.store') }}" >
+                <form id="paymentForm" action="{{route('pay_store')}}" method="post">
                     <div class="name">
                         <label for="firstName">First Name:</label>
                         <input type="text" id="firstName" name="firstName" placeholder="John" required>

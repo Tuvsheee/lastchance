@@ -12,60 +12,86 @@
 
 <body>
 
-<header>
-        <nav class="naviga">
-            <a href="home">Home</a>
-            <a href="#">About</a>
-            <a href="#">Service</a>
-            <a href="#">Contact</a>
-        </nav>
+      <header>
+        <div class="nav-v2__wrapper">
+
+            <nav class="nav-v2-main" role="navigation" data-nav-v2-mobile="">
+            <div class="nav-v2-main__wrapper">
+                <ul ul="" class="nav-v2-main__list">
+                <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Hire Designers" href="/hiring">Find talent</a>
+                </li>
+
+                <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Inspiration" href="/shots/popular">Inspiration</a>
+                </li>
+
+                <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Jobs" href="/jobs">Jobs</a>
+                </li>
+
+                    <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Go Pro" href="/pro">Go Pro</a>
+                    </li>
+
+                    <li class="nav-v2-main__item nav-v2-main__item--divided nav-v2-hide-medium-up">
+                    <a data-nav-event-clicked="Sign in" href="/session/new">Log in</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+
+            <a class="nav-v2-logo" href="home">
+                <img src="/css/images/title1.png" alt="Marine Life" width="200" height="100">
+            </a>
+        </div>
     </header>
 
-<div class="search-container">
-    
-    <form id="hotel-search-form">
-      <div class="form-group">
-        <label for="location"></label>
-        <input type="text" id="location" name="location" required>
-      </div>
-      <div class="from-group">
-        <label for="check-in"></label>
-        <input type="date" id="check-in" name="check-in" required>
-      </div>
-      <div class="from-group">
-        <label for="check-out"></label>
-        <input type="date" id="check-out" name="check-out" required>
-      </div>
-      <div class="from-group">
-        <label for="rooms"></label>
-        <input type="number" id="rooms" name="rooms" min="1" required>
-      </div>
-      <div class="from-group">
-        <button class="search" type="submit">Search</button>
-      </div>      
-    </form>
-</div>
-  <div class="picture1">
-    <div class="image-button">
-            <div class="room" id="room1">
-              <img src="/css/images/s1.png" alt="Room 1 Image">
-              <div class="heading">
-                <h1><p> 1 King Bed Standard </p></h1>
+    <div class="search-container">
+        
+        <form id="hotel-search-form">
+          <div class="form-group">
+            <label for="location"></label>
+            <input type="text" id="location" name="location" required>
+          </div>
+          <div class="from-group">
+            <label for="check-in"></label>
+            <input type="date" id="check-in" name="check-in" required>
+          </div>
+          <div class="from-group">
+            <label for="check-out"></label>
+            <input type="date" id="check-out" name="check-out" required>
+          </div>
+          <div class="from-group">
+            <label for="rooms"></label>
+            <input type="number" id="rooms" name="rooms" min="1" required>
+          </div>
+          <div class="from-group">
+            <button class="search" type="submit">Search</button>
+          </div>      
+        </form>
+    </div>
+    <div class="picture1">
+      <div class="image-button">
+              <div class="room" id="room1">
+                <img src="/css/images/s1.png" alt="Room 1 Image">
+                <div class="heading">
+                  <h1><p> 1 King Bed Standard </p></h1>
+                </div>
+                <a href="modal">
+                  <p class="description">room detailes</p>
+                </a>
+                <p class="free">Free cancellation available</p>
+                <p class="member">MEMBER DISCOUND </p>
+                <p class="only">Only 1room left</p>
+                <h1><p class="sale">349$</p></h1>
+                <p class="usd">USD per nigth </p>
+                <p class="exc">Excludes taxes and fees</p>
+                <a class="price" href="reservation">
+                  <div>Booking</div>
+                </a>
               </div>
-              <a href="modal">
-                <p class="description">room detailes</p>
-              </a>
-              <p class="free">Free cancellation available</p>
-              <p class="member">MEMBER DISCOUND </p>
-              <p class="only">Only 1room left</p>
-              <h1><p class="sale">349$</p></h1>
-              <p class="usd">USD per nigth </p>
-              <p class="exc">Excludes taxes and fees</p>
-              <a class="price" href="reservation">
-                <div>Booking</div>
-              </a>
-            </div>
-    </div> 
+      </div> 
         <div class="image-button">
           <div class="room" id="room2">
             <img src="/css/images/s2.png" alt="Room 2 Image">
@@ -104,25 +130,6 @@
         </div>
   </div>
 
-
-
-  <!-- resources/views/modal.blade.php -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <form action="{{ route('submitForm') }}" method="post">
-            @csrf
-            <!-- Your form fields go here -->
-            <button type="submit">Bookings</button>
-        </form>
-    </div>
-</div>
-
-<script>
-    function closeModal() {
-        document.getElementById('myModal').style.display = 'none';
-    }
-</script>
 
 
 </body>

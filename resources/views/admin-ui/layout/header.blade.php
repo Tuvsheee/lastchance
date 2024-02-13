@@ -2,9 +2,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/home">
-                        <b>
-                            <h1>Marina Admin Table</h1>
-                        </b>
+                        <img src="/css/images/title1.png" alt="Marine Life" width="100" height="70">
                     </a>
                 </div>
         

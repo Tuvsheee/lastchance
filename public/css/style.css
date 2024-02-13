@@ -1,4 +1,5 @@
 
+
 body{
   background-color: rgb(250, 243, 234);
 }
@@ -39,12 +40,28 @@ h3{
   left:42%;
   transform: translateX(-50);
 }
-.booking{
-  background-color: orangered;
+
+.booking {
+  display: inline-block;
   position: absolute;
   top:80%;
   left:47%;
-  color: black;
+  padding: 5px 10px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #789ab1;
+  color: #ffffff;
+  border: 2px solid #2980b9;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect */
+.booking:hover {
+  background-color: #2980b9;
+  border-color: #3498db;
 }
 .mhead{
   font-size:3em;
@@ -64,7 +81,7 @@ h3{
   text-align: center;
   font-family: 'arial';
 }
-.ehead1{
+.ehead1{ 
   margin-left: 150px;
   font-size:2em;
   font-family: 'arial';
@@ -72,7 +89,7 @@ h3{
 }
 .row{
   display: flex;
-  padding: 20px;
+  padding: 15px;
   justify-content: space-between;
 }
 
@@ -232,8 +249,8 @@ padding: 10px;
   text-align: center;
   font-family: sans-serif;
   border: 1px solid white; /* Border style and color */
-  width: 200px; /* Example width */
-  height: 100px;
+  width: 250px; /* Example width */
+  height: 150px;
   padding: 10px; /* Padding around the text */
   display: inline-block; /* Make the border fit the text width */
 }
@@ -242,8 +259,8 @@ padding: 10px;
   text-align: center;
   font-family: sans-serif;
   border: 1px solid white; /* Border style and color */
-  width: 200px; /* Example width */
-  height: 100px;
+  width: 250px; /* Example width */
+  height: 150px;
   padding: 10px; /* Padding around the text */
   display: inline-block; /* Make the border fit the text width */
 }
@@ -251,8 +268,8 @@ padding: 10px;
   text-align: center;
   font-family: sans-serif;
   border: 1px solid white; /* Border style and color */
-  width: 200px; /* Example width */
-  height: 100px;
+  width: 250px; /* Example width */
+  height: 150px;
   padding: 10px; /* Padding around the text */
   display: inline-block; /* Make the border fit the text width */
 }
@@ -359,9 +376,11 @@ padding: 10px;
   height: 400px;
 }
 .ending2 {
-  background: gray ;
+  background: #252627 ;
   color: #fff;
 }
+
+
 
 @media (max-width: 768px) {
   h1 {

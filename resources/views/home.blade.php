@@ -10,20 +10,66 @@
    
     <link href="/css/style.css " rel="stylesheet">
     <link href="/css/navbar.css " rel="stylesheet">
-    
-    
+    <script src="{{asset('assets/js/timebar.js')}}"></script>
     
 
 </head>
 <body>
     <header>
-        <nav class="naviga">
-            <a href="#">About</a>
-            <a href="#">Service</a>
-            <a href="#">Contact</a>
-            <button id="loginButton" class="btn btnLogin-none">Login</button>
-        </nav>
+        <div class="nav-v2__wrapper">
+
+            <nav class="nav-v2-main" role="navigation" data-nav-v2-mobile="">
+            <div class="nav-v2-main__wrapper">
+                <ul ul="" class="nav-v2-main__list">
+                <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Hire Designers" href="/hiring">Find talent</a>
+                </li>
+
+                <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Inspiration" href="/shots/popular">Inspiration</a>
+                </li>
+
+                <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Jobs" href="/jobs">Jobs</a>
+                </li>
+
+                    <li class="nav-v2-main__item">
+                    <a data-nav-event-clicked="Go Pro" href="/pro">Go Pro</a>
+                    </li>
+
+                    <li class="nav-v2-main__item nav-v2-main__item--divided nav-v2-hide-medium-up">
+                    <a data-nav-event-clicked="Sign in" href="/session/new">Log in</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+
+            <a class="nav-v2-logo" href="home">
+                <img src="/css/images/title1.png" alt="Marine Life" width="200" height="100">
+            </a>
+            <div class="nav-v2-dynamic nav-v2-dynamic--loaded" data-nav-v2-dynamic="">
+                <div class="nav-v2-dynamic__logged-out">
+                <form class="nav-v2-search" data-nav-v2-search-form="" action="/search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" role="img" class="icon nav-v2-search__icon">
+                        <path d="M1.5 7.75C1.5 9.4076 2.15848 10.9973 3.33058 12.1694C4.50269 13.3415 6.0924 14 7.75 14C9.4076 14 10.9973 13.3415 12.1694 12.1694C13.3415 10.9973 14 9.4076 14 7.75C14 6.0924 13.3415 4.50269 12.1694 3.33058C10.9973 2.15848 9.4076 1.5 7.75 1.5C6.0924 1.5 4.50269 2.15848 3.33058 3.33058C2.15848 4.50269 1.5 6.0924 1.5 7.75V7.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.814 12.8132L15.5 15.4999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+
+                    <input class="nav-v2-search__input" type="text" name="q" placeholder="Search..." autocomplete="off" value="">
+            
+                </form>
+                <a class="nav-v2-dynamic__login" data-nav-event-clicked="Sign in" id="loginButton">Log in</a>
+                <a class="btn2 btn2--medium" data-nav-event-clicked="Sign Up" href="register">Sign up</a>
+                </div>
+            </div>
+
+        </div>
     </header>
+       <!-- Read Time Bar Container -->
+       <div id="readTimeBar">
+        <div id="progressIndicator"></div>
+    </div>
+
     <div class="tittle" >
             <div class="column" width="100%">
                 <img src="/css/images/backround.jpg">
@@ -32,7 +78,7 @@
             <h2>WELCOME TO</h2>
             <h3>Resort And Hotel</h3>    
         </div>   
-    <a class="booking" href="/page2">BOOK NOW</a> <!-- Link to navigate to Page 2 -->
+    <a class="booking" href="/mroom">BOOK NOW</a> <!-- Link to navigate to Page 2 -->
 
     <div class="mhead" >Accommodations</div>
     

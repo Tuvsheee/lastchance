@@ -1,11 +1,9 @@
 <?php
-
 use App\Http\Controllers\Medee;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\News;
 use App\Http\Controllers\Payments;
-use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,18 +14,12 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/show-modal', [ModalController::class, 'showModal'])->name('showModal');
-Route::post('/submit-form', [ModalController::class, 'submitForm'])->name('submitForm');
 
 Route::get('/home', function () {
     return view('home'); 
 });
 Route::get('/modal', function () {
     return view('modal'); 
-});
-
-Route::get('/page2', function () {
-    return view('page2'); 
 });
 
 Route::get('/reservation', function () {
@@ -48,10 +40,12 @@ Route::get('/', function () {
 
 Route::delete('/admin/category/delete/{category}', [Category::class, 'destroy'])->name('admin.destroy');
 Route::get('/admin/news', [News::class, 'index'])->name('news');
+Route::get('/admin/payment', [Payments::class, 'index'])->name('pay_store');
+Route::get('/admin/news/create', [News::class, 'create'])->name('news_create');
 Route::get('/admin/news/create', [News::class, 'create'])->name('news_create');
 Route::post('/admin/news/create', [News::class, 'store'])->name('news_store');
+Route::delete('/admin/category/delete{category}', [Category::class, 'destroy'])->name('cat_delete');
 
-use App\Http\Controllers\ReservationController;
 
-Route::post('/reservation/store', [ReservationController::class, 'store'])->name('reservation.store');
+
 
