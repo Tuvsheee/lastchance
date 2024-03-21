@@ -20,10 +20,12 @@
         <div class="card">
             <div class="form-box login">
                 <h2>Login</h2>
-                <form action="home" method="POST">
+                <form action="{{route('login')}}" method="POST">
+                
+                @csrf
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                        <input type="email" required>
+                        <input type="gmail" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
@@ -31,10 +33,7 @@
                         <input type="password" required>
                         <label>Password</label>
                     </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">Remember Me?</label> 
-                        <a href="#">Forgot Password</a>
-                    </div>
+                 
                     <button type="submit" class="btn">Login</button>
                     <div class="login-register"><p>Don't have an account? <a href="register" class="register-link">Register</a></p></div>
                 </form>

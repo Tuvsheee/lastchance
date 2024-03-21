@@ -21,20 +21,17 @@
             <nav class="nav-v2-main" role="navigation" data-nav-v2-mobile="">
             <div class="nav-v2-main__wrapper">
                 <ul ul="" class="nav-v2-main__list">
+
                 <li class="nav-v2-main__item">
-                    <a data-nav-event-clicked="Hire Designers" href="/hiring">Find talent</a>
+                    <a data-nav-event-clicked="Inspiration" href="/shots/popular">Rooms</a>
                 </li>
 
                 <li class="nav-v2-main__item">
-                    <a data-nav-event-clicked="Inspiration" href="/shots/popular">Inspiration</a>
-                </li>
-
-                <li class="nav-v2-main__item">
-                    <a data-nav-event-clicked="Jobs" href="/jobs">Jobs</a>
+                    <a data-nav-event-clicked="Jobs" href="/reservation">Pay</a>
                 </li>
 
                     <li class="nav-v2-main__item">
-                    <a data-nav-event-clicked="Go Pro" href="/pro">Go Pro</a>
+                    <a data-nav-event-clicked="Go Pro" onclick="scrollToBottom()">About Us</a>
                     </li>
 
                     <li class="nav-v2-main__item nav-v2-main__item--divided nav-v2-hide-medium-up">
@@ -49,15 +46,6 @@
             </a>
             <div class="nav-v2-dynamic nav-v2-dynamic--loaded" data-nav-v2-dynamic="">
                 <div class="nav-v2-dynamic__logged-out">
-                <form class="nav-v2-search" data-nav-v2-search-form="" action="/search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" role="img" class="icon nav-v2-search__icon">
-                        <path d="M1.5 7.75C1.5 9.4076 2.15848 10.9973 3.33058 12.1694C4.50269 13.3415 6.0924 14 7.75 14C9.4076 14 10.9973 13.3415 12.1694 12.1694C13.3415 10.9973 14 9.4076 14 7.75C14 6.0924 13.3415 4.50269 12.1694 3.33058C10.9973 2.15848 9.4076 1.5 7.75 1.5C6.0924 1.5 4.50269 2.15848 3.33058 3.33058C2.15848 4.50269 1.5 6.0924 1.5 7.75V7.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M12.814 12.8132L15.5 15.4999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-
-                    <input class="nav-v2-search__input" type="text" name="q" placeholder="Search..." autocomplete="off" value="">
-            
-                </form>
                 <a class="nav-v2-dynamic__login" data-nav-event-clicked="Sign in" id="loginButton">Log in</a>
                 <a class="btn2 btn2--medium" data-nav-event-clicked="Sign Up" href="register">Sign up</a>
                 </div>
@@ -211,6 +199,11 @@
                 // Assuming you want to redirect to a page called "dashboard.html"
                 window.location.href = 'login';
             });
+        </script>
+        <script>
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
         </script>
 </body>
 </html>

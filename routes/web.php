@@ -2,8 +2,9 @@
 use App\Http\Controllers\Medee;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category;
-use App\Http\Controllers\News;
-use App\Http\Controllers\Payments;
+use App\Http\Controllers\Login;
+use App\Http\Controllers\Reservation;
+use App\Http\Controllers\HotelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,13 +39,19 @@ Route::get('/', function () {
     return view('home'); 
 });
 
-Route::delete('/admin/category/delete/{category}', [Category::class, 'destroy'])->name('admin.destroy');
-Route::get('/admin/news', [News::class, 'index'])->name('news');
-Route::get('/admin/payment', [Payments::class, 'index'])->name('pay_store');
-Route::get('/admin/news/create', [News::class, 'create'])->name('news_create');
-Route::get('/admin/news/create', [News::class, 'create'])->name('news_create');
-Route::post('/admin/news/create', [News::class, 'store'])->name('news_store');
-Route::delete('/admin/category/delete{category}', [Category::class, 'destroy'])->name('cat_delete');
+Route::get('/admin/login', [Login::class, 'index'])->name('news');
+Route::get('/admin/payments', [Reservation::class, 'payon'])->name('pay_on');
+Route::get('/admin/login/create', [Login::class, 'create'])->name('news_create');
+Route::get('/admin/login/create', [Login::class, 'create'])->name('news_create');
+Route::post('/admin/login/create', [Login::class, 'store'])->name('news_store');
+Route::post('/reservation', [Reservation::class, 'paystore'])->name('res_pay');
+Route::post('/login', [Login::class, 'store'])->name('login');
+Route::get('/mroom', [HotelController::class, 'search'])->name('m_search');
+
+
+
+
+
 
 
 

@@ -24,13 +24,6 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        Schema::defaultStringLength(191);
-        View::composer('*', function ($view) {
-            $category = Category::get();
-            $view->with(compact('category'));
-        });
-    }
+   
 
 }
