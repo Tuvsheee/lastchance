@@ -48,6 +48,7 @@ Route::post('/reservation', [Reservation::class, 'store'])->name('res_pay');
 Route::get('/admin/login', [AuthController::class, 'index'])->name('news');
 
 Route::post('/mroom', [Searchs::class, 'search'])->name('m_search');
+Route::post('/home', [AuthController::class, 'loginAction'])->name('uhome');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('register', 'register')->name('register');

@@ -17,15 +17,6 @@
 </head>
 
 <body>
-@if(Auth::check())
-                <div class="profile-image">
-                        <div class="col ml-md-n2 profile-user-info">
-                            <h4 class="user-name mb-3">{{ Auth::user()->name }}</h4>
-                        </div>
-                        <a href="{{ route('logout') }}"> <img  alt="User Image" src="/css/images/unnamed.png" class="rounded-image"> </a>
-                </div>
-                @else
-                @endif
 
 <main>
 <section class="py-0 pt-sm-5">

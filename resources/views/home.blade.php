@@ -71,7 +71,7 @@
             <h1>The Marina</h1>
             <h2>WELCOME TO</h2>
             <h3>Resort And Hotel</h3>    
-        </div>   
+    </div>   
     <a class="booking" href="/mroom">BOOK NOW</a> <!-- Link to navigate to Page 2 -->
 
     <div class="mhead" >Accommodations</div>

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> The Marina Hotel"</title>
     <link href="/css/mroom.css " rel="stylesheet" >
-    <link href="/css/profile.css " rel="stylesheet" >
     <link href="/css/navbar.css " rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css " rel="stylesheet">
     <script src="{{asset('assets/js/timebar.js')}}"></script>
@@ -42,8 +41,6 @@
         <div id="progressIndicator"></div>
     </div>
 
-    
-
     <div class="filter-by">
       <p>Filter by</p>
       <div class="popular-filters">
@@ -55,7 +52,6 @@
       </div>
     </div>
 
-    
     <div class="picture1">
       <div class="image-button">
               <div class="room" id="room1">

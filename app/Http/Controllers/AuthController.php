@@ -15,6 +15,7 @@ class AuthController extends Controller
     {
         return view('register');
     }
+    
   
     public function registerSave(Request $request)
     {
@@ -54,7 +55,7 @@ class AuthController extends Controller
   
         $request->session()->regenerate();
   
-        return redirect()->route('m_search');
+        return redirect()->route('uhome');
     }
   
     public function logout(Request $request)
