@@ -10,7 +10,7 @@
 
 </head>
 <body>
-
+    
     <div class="container">
         <div id="left-column" class="column">
             <h2>Complete your reservation</h2>

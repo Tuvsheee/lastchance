@@ -9,6 +9,7 @@
     
    
     <link href="/css/style.css " rel="stylesheet">
+    <link href="/css/profile.css " rel="stylesheet">
     <link href="/css/navbar.css " rel="stylesheet">
     <script src="{{asset('assets/js/timebar.js')}}"></script>
 
@@ -37,11 +38,25 @@
             </a>
             <div class="nav-v2-dynamic nav-v2-dynamic--loaded" data-nav-v2-dynamic="">
                 <div class="nav-v2-dynamic__logged-out">
-                <a class="nav-v2-dynamic__login" data-nav-event-clicked="Sign in" href="login">Log in</a>
-                <a class="btn2 btn2--medium" data-nav-event-clicked="Sign Up" href="register">Sign up</a>
+                    <a class="nav-v2-dynamic__login" data-nav-event-clicked="Sign in" href="login">Log in</a>
+                    <a class="btn2 btn2--medium" data-nav-event-clicked="Sign Up" href="register">Sign up</a>
                 </div>
+                @if(Auth::check())
+                <div class="profile-image">
+                        <div class="col ml-md-n2 profile-user-info">
+                            <h4 class="user-name mb-3">{{ Auth::user()->name }}</h4>
+                        </div>
+                        <a href="{{ route('logout') }}"> <img  alt="User Image" src="/css/images/unnamed.png" class="rounded-image"> </a>
+                </div>
+                @else
+                @endif
             </div>
         </div>
+
+        
+
+        
+
 
     </header>
        <!-- Read Time Bar Container -->
