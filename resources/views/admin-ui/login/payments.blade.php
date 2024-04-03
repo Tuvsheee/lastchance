@@ -29,17 +29,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($allPayments as $n)
+                                            @foreach($payments as $n)
                                             <tr>
                                                 <td>{{$n->id}}</td>
-                                                <td>{{$n->first_name}}</td>
-                                                <td>{{$n->last_name}}</td>
+                                                <td>{{$n->firstname}}</td>
+                                                <td>{{$n->lastname}}</td>
                                                 <td>{{$n->email}}</td>
                                                 <td>{{$n->country}}</td>
-                                                <td>{{$n->city_name}}</td>
+                                                <td>{{$n->cityname}}</td>
                                                 <td>{{$n->address}}</td>
-                                                <td>{{$n->postal_code}}</td>
-                                                <td>{{$n->total_price}}</td>
+                                                <td>{{$n->postalcode}}</td>
+                                                <td>{{$n->totalprice}}</td>
                                                 
                                             </tr>
                                             @endforeach

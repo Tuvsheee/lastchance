@@ -11,6 +11,7 @@
     <link href="/css/style.css " rel="stylesheet">
     <link href="/css/navbar.css " rel="stylesheet">
     <script src="{{asset('assets/js/timebar.js')}}"></script>
+
     
 
 </head>
@@ -23,11 +24,7 @@
                 <ul ul="" class="nav-v2-main__list">
 
                 <li class="nav-v2-main__item">
-                    <a data-nav-event-clicked="Inspiration" href="/shots/popular">Rooms</a>
-                </li>
-
-                <li class="nav-v2-main__item">
-                    <a data-nav-event-clicked="Jobs" href="/reservation">Pay</a>
+                    <a data-nav-event-clicked="Inspiration" href="/mroom">Rooms</a>
                 </li>
 
                     <li class="nav-v2-main__item">
@@ -50,8 +47,8 @@
                 <a class="btn2 btn2--medium" data-nav-event-clicked="Sign Up" href="register">Sign up</a>
                 </div>
             </div>
-
         </div>
+
     </header>
        <!-- Read Time Bar Container -->
        <div id="readTimeBar">

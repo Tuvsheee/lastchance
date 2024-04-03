@@ -3,8 +3,10 @@ use App\Http\Controllers\Medee;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Register;
 use App\Http\Controllers\Reservation;
-use App\Http\Controllers\HotelController;
+use App\Http\Controllers\Searchs;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,17 +41,26 @@ Route::get('/', function () {
     return view('home'); 
 });
 
-Route::get('/admin/login', [Login::class, 'index'])->name('news');
+
 Route::get('/admin/payments', [Reservation::class, 'payon'])->name('pay_on');
-Route::get('/admin/login/create', [Login::class, 'create'])->name('news_create');
-Route::get('/admin/login/create', [Login::class, 'create'])->name('news_create');
-Route::post('/admin/login/create', [Login::class, 'store'])->name('news_store');
-Route::post('/reservation', [Reservation::class, 'paystore'])->name('res_pay');
-Route::post('/login', [Login::class, 'store'])->name('login');
-Route::get('/mroom', [HotelController::class, 'search'])->name('m_search');
+Route::post('/reservation', [Reservation::class, 'store'])->name('res_pay');
 
+Route::get('/admin/login', [AuthController::class, 'index'])->name('news');
 
+Route::post('/mroom', [Searchs::class, 'search'])->name('m_search');
 
+Route::controller(AuthController::class)->group(function () {
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerSave')->name('register.save');
+  
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginAction')->name('login.action');
+  
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+});
+
+Route::delete('destroy/{id}',[AuthController::class, 'destroy'])->name('user.destroy');
+ 
 
 
 

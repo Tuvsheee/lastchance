@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Payments as ModelsPayment;
+use App\Models\Payment;
 
 class Reservation extends Controller
 {
@@ -15,8 +15,8 @@ class Reservation extends Controller
 
      public function payon()
     {
-        $allPayments = ModelsPayment::orderByDesc('id')->get();
-        return view('admin-ui.login.payments', compact('allPayments'));
+        $payments = Payment::all();
+        return view('admin-ui.login.payments', compact('payments'));
     }
 
     /**
@@ -31,19 +31,20 @@ class Reservation extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function paystore(Request $request)
+    public function store(Request $request)
     {
-        $payment = new ModelsPayment();
-        $payment->first_name = $request->first_name;
-        $payment->last_name = $request->last_name;
-        $payment->email = $request->email;
-        $payment->country = $request->country;
-        $payment->city_name = $request->city_name;
-        $payment->address = $request->address;
-        $payment->postal_code = $request->postal_code;
-        $payment->total_price = $request->total_price;
-        $payment->save();
-        return redirect()->route('res_pay');
+        $payments = new Payment();
+        $payments->firstname = $request->firstname;
+        $payments->lastname = $request->lastname;
+        $payments->email = $request->email;
+        $payments->country = $request->country;
+        $payments->cityname = $request->cityname;
+        $payments->address = $request->address;
+        $payments->postalcode = $request->postalcode;
+        $payments->totalprice = $request->totalprice;
+        $payments->save();
+        return redirect()->route('res_pay')->with('success', 'your payment successfully');
+     
     }
 
     /**

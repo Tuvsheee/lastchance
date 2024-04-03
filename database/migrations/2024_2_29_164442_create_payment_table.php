@@ -16,14 +16,14 @@ class CreatePaymentTable extends Migration
 {
     Schema::create('payments', function (Blueprint $table) {
         $table->id();
-        $table->string('first_name')->nullable();
-        $table->string('last_name')->nullable();
+        $table->string('firstname')->nullable();
+        $table->string('lastname')->nullable();
         $table->string('email')->nullable();
         $table->string('country')->nullable();
-        $table->string('city_name')->nullable();
+        $table->string('cityname')->nullable();
         $table->string('address')->nullable(); // Change data type to string
-        $table->string('postal_code')->nullable(); // Change data type to string
-        $table->decimal('total_price', 10, 2)->nullable(); // Change data type to decimal
+        $table->string('postalcode')->nullable(); // Change data type to string
+        $table->decimal('totalprice', 10, 2)->nullable(); // Change data type to decimal
         $table->timestamps();
     });
 }

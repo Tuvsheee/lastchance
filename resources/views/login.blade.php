@@ -20,17 +20,26 @@
         <div class="card">
             <div class="form-box login">
                 <h2>Login</h2>
-                <form action="{{route('login')}}" method="POST">
-                
-                @csrf
+
+            <form action="{{ route('login.action') }}" method="POST" >
+                 @csrf
+                    @if ($errors->any())
+                      <div class="alert alert-danger">
+                          <ul>
+                            @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                            @endforeach
+                          </ul>
+                      </div>
+                    @endif
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                        <input type="gmail" required>
+                        <input name="email" type="gmail" id="exampleInputEmail" aria-describedby="emailHelp" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                        <input type="password" required>
+                        <input name="password" type="password" id="exampleInputPassword" required>
                         <label>Password</label>
                     </div>
                  
@@ -42,6 +51,7 @@
             
         </div>
     </div>
+
 
     <script src="javascript/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

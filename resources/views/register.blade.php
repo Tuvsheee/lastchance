@@ -21,21 +21,39 @@
         <div class="card">
             <div class="form-box register">
                 <h2>Register</h2>
-                <form action="Home" method="POST">
+                <form action="{{ route('register.save') }}" method="POST" >
+                @csrf
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
-                        <input type="text" required>
+                        <input name="name" type="text" required>
                         <label>Username</label>
+                        @error('name')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
-                        <input type="email" required>
+                        <input name="email" type="email" required>
                         <label>Email</label>
+                        @error('email')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                        <input type="password" required>
+                        <input name="password" type="password" required>
                         <label>Password</label>
+                        @error('password')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input name="password_confirmation" type="password" required>
+                        <label>Repeat Password</label>
+                        @error('password_confirmation')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="remember-forgot">
                         <label><input type="checkbox">I agree to the terms & conditions</label> 
@@ -46,6 +64,7 @@
             </div>
         </div>
     </div>
+
 
     <script src="javascript/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

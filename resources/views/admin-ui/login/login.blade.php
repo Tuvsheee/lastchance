@@ -5,10 +5,6 @@
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor"> Бүртгэл :</h3>
                     </div>
-                    <div class="col-md-7 align-self">
-                        <a href="{{route('news_create')}}"
-                            class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Бүртгэл нэмэх:</a>
-                    </div>
                 </div>
 @endsection
 
@@ -24,6 +20,7 @@
                                             <tr>
                                                 <th>№</th>
                                                 <th>Username</th>
+                                                <th>Email</th>
                                                 <th>Password</th>
                                                 <th>Устгах</th>
                                             </tr>
@@ -32,9 +29,18 @@
                                             @foreach($allNews as $n)
                                             <tr>
                                                 <td>{{$n->id}}</td>
-                                                <td>{{$n->title}}</td>
-                                                <td>{{$n->description}}</td>
-                                                <td>Устгах</td>
+                                                <td>{{$n->name}}</td>
+                                                <td>{{$n->email}}</td>
+                                                <td>{{$n->password}}</td>
+                                                <td>
+                                                    <form action="{{ route('user.destroy', $n->id) }}" method="POST" type="button"  onsubmit="return confirm('Delete?')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger m-0">Delete</button>
+                                                    </form>
+                                                </td>
+                                                
+                                                
 
 
                                                 

@@ -17,10 +17,10 @@
             <form action="{{route('res_pay')}}"   method="post"  
                                 class="form-horizontal form-material mx-2">
                                     @csrf
-                                    <label for="firstName">First Name:</label>
-                                    <input type="text" id="firstName" name="firstName" placeholder="John" required>
-                                    <label for="lastName">Last Name:</label>
-                                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                                    <label for="firstname">First Name:</label>
+                                    <input type="text" id="firstname" name="firstname" placeholder="John" required>
+                                    <label for="lastname">Last Name:</label>
+                                    <input type="text" id="lastname" name="lastname" placeholder="Doe" required>
                                     
                                     <label for="email">Email:</label>
                                     <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
@@ -28,21 +28,21 @@
                                     <label for="country">Country:</label>
                                     <input type="text" id="country" name="country" placeholder="Mongolia" required>
 
-                                    <label for="city">City:</label>
-                                    <select id="cityName" name="cityName" required>
-                                        <option value="single">Ulaanbaatar</option>
-                                        <option value="double">Darkhan</option>
-                                        <option value="suite">Erdenet</option>
+                                    <label for="cityname">City:</label>
+                                    <select id="cityname" name="cityname" required>
+                                        <option value="Ulaanbaatar">Ulaanbaatar</option>
+                                        <option value="Darkhan">Darkhan</option>
+                                        <option value="Erdenet">Erdenet</option>
                                         </select>
 
                                     <label for="address">Address:</label>
                                     <input type="text" id="address" name="address" placeholder="123 Main Street" required>
 
                                     <label for="postalCode">Postal Code:</label>
-                                    <input type="text" id="postalCode" name="postalCode" placeholder="10001" required>
+                                    <input type="text" id="postalcode" name="postalcode" placeholder="10001" required>
 
-                                    <label for="totalPrice">Total Price:</label>
-                                    <input type="text" id="totalPrice" name="totalPrice" placeholder="$500.00" required>
+                                    <label for="totalprice">Total Price:</label>
+                                    <input type="text" id="totalprice" name="totalprice" placeholder="$500.00" required>
                                    
                                     <div class="form-group">
                                         <div class="col-sm-12">
