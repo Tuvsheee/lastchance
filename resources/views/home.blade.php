@@ -22,17 +22,11 @@
             <nav class="nav-v2-main" role="navigation" data-nav-v2-mobile="">
             <div class="nav-v2-main__wrapper">
                 <ul ul="" class="nav-v2-main__list">
-
-                <li class="nav-v2-main__item">
-                    <a data-nav-event-clicked="Inspiration" href="/mroom">Rooms</a>
-                </li>
-
+                    <li class="nav-v2-main__item">
+                        <a data-nav-event-clicked="Inspiration" href="/mroom">Rooms</a>
+                    </li>
                     <li class="nav-v2-main__item">
                     <a data-nav-event-clicked="Go Pro" onclick="scrollToBottom()">About Us</a>
-                    </li>
-
-                    <li class="nav-v2-main__item nav-v2-main__item--divided nav-v2-hide-medium-up">
-                    <a data-nav-event-clicked="Sign in" href="/session/new">Log in</a>
                     </li>
                 </ul>
             </div>
@@ -43,7 +37,7 @@
             </a>
             <div class="nav-v2-dynamic nav-v2-dynamic--loaded" data-nav-v2-dynamic="">
                 <div class="nav-v2-dynamic__logged-out">
-                <a class="nav-v2-dynamic__login" data-nav-event-clicked="Sign in" id="loginButton">Log in</a>
+                <a class="nav-v2-dynamic__login" data-nav-event-clicked="Sign in" href="login">Log in</a>
                 <a class="btn2 btn2--medium" data-nav-event-clicked="Sign Up" href="register">Sign up</a>
                 </div>
             </div>

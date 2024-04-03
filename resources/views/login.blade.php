@@ -11,9 +11,6 @@
         <h2 class="logo">The Marina Hotel</h2>
         <nav class="naviga">
             <a href="home">Home</a>
-            <a href="#">About</a>
-            <a href="#">Service</a>
-            <a href="#">Contact</a>
         </nav>
     </header>
     <div class="form_wrapper">
