@@ -44,11 +44,14 @@
     <div class="filter-by">
       <p>Filter by</p>
       <div class="popular-filters">
+        <form  method="GET">
           <label><input type="checkbox" name="filter" value="internet"><i class="fa-solid fa-wifi"></i> Internet Wifi <pre></label>
           <label><input type="checkbox" name="filter" value="tv"><i class="fa-solid fa-tv"></i> TV</label>
           <label><input type="checkbox" name="filter" value="aircondition"><i class="fa-solid fa-wind"></i> AirCondition</label>
           <label><input type="checkbox" name="filter" value="shower"><i class="fa-solid fa-shower"></i> Shower</label>
           <label><input type="checkbox" name="filter" value="breakfast"><i class="fa-solid fa-mug-saucer"></i> Breakfast</label>
+          <button type="submit">Search</button>
+        </form>
       </div>
     </div>
 

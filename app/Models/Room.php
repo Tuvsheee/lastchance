@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    use HasFactory;
-
-    protected $fillable = ['name', 'capacity', 'price'];
-
-    // Define the relationship with Booking model
-    public function bookings()
-    {
-        return $this->hasMany(Booking::class);
-    }
+    protected $fillable = [
+        'name',
+        'arrival_date',
+        'departure_date',
+        'adults',
+        'children',
+        // Add more fillable properties as needed
+    ];
 }
