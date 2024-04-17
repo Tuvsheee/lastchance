@@ -6,58 +6,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/css/payment.css " rel="stylesheet">
 
 </head>
 <body>
-    
+
     <div class="container">
         <div id="left-column" class="column">
-            <h2>Complete your reservation</h2>
-            <form action="{{route('res_pay')}}"   method="post"  
-                                class="form-horizontal form-material mx-2">
-                                    @csrf
-                                    <label for="firstname">First Name:</label>
-                                    <input type="text" id="firstname" name="firstname" placeholder="John" required>
-                                    <label for="lastname">Last Name:</label>
-                                    <input type="text" id="lastname" name="lastname" placeholder="Doe" required>
-                                    
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+            <div class="col-75">
+                <div class="container">
+                  <form action="{{route('res_pay')}}"   method="post">
+                  @csrf
 
-                                    <label for="country">Country:</label>
-                                    <input type="text" id="country" name="country" placeholder="Mongolia" required>
+                    <div class="row">
+                      <div class="col-50">
+                        <h3>Billing Address</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Ochki">
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="code@example.com">
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                        <input type="text" id="adr" name="address" placeholder="71th street">
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        <input type="text" id="city" name="cityname" placeholder="Ulaanbator">
 
-                                    <label for="cityname">City:</label>
-                                    <select id="cityname" name="cityname" required>
-                                        <option value="Ulaanbaatar">Ulaanbaatar</option>
-                                        <option value="Darkhan">Darkhan</option>
-                                        <option value="Erdenet">Erdenet</option>
-                                        </select>
+                        <div class="row">
+                          <div class="col-50">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="country" placeholder="MH">
+                          </div>
+                          <div class="col-50">
+                            <label for="zip">Zip</label>
+                            <input type="text" id="zip" name="postalcode" placeholder="400001">
+                          </div>
+                        </div>
+                      </div>
 
-                                    <label for="address">Address:</label>
-                                    <input type="text" id="address" name="address" placeholder="123 Main Street" required>
+                      <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="fname">Accepted Cards</label>
+                        <div class="icon-container">
+                          <i class="fa fa-cc-visa" style="color:navy;"></i>
+                          <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                          <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="cname">Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Faraz">
+                        <label for="ccnum">Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                        <label for="expmonth">Exp Month</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="December">
+                        <div class="row">
+                          <div class="col-50">
+                            <label for="expyear">Exp Year</label>
+                            <input type="text" id="expyear" name="expyear" placeholder="2027">
+                          </div>
+                          <div class="col-50">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123">
+                          </div>
+                        </div>
+                      </div>
 
-                                    <label for="postalCode">Postal Code:</label>
-                                    <input type="text" id="postalcode" name="postalcode" placeholder="10001" required>
-
-                                    <label for="totalprice">Total Price:</label>
-                                    <input type="text" id="totalprice" name="totalprice" placeholder="$500.00" required>
-                                   
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="submit" name="submit" value="Insert" class="btn btn-success">
-                                        </div>
-                                    </div>
-                                </form>     
-
-                
-                <!-- <div class="approve">
-                  <label>
-                    <input type="checkbox" id="connectButton" name="termsAndConditions" required>I agree to the terms and conditions
-                  </label>
-                </div> -->
-
+                    </div>
+                    <label>
+                      <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                    </label>
+                    <input type="submit" value="Continue to checkout" class="btn">
+                  </form>
+                </div>
+              </div>
         </div>
         <div id="right-column" class="column">
                 <h3>Booking Summary</h3>

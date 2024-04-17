@@ -74,6 +74,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::delete('destroy/{id}',[AuthController::class, 'destroy'])->name('user.destroy');
+Route::delete('destroy/room/{id}',[Searchs::class, 'destroy'])->name('room.destroy');
  
 
 

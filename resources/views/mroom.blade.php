@@ -41,76 +41,52 @@
     <div id="readTimeBar">
         <div id="progressIndicator"></div>
     </div>
-
-    <div class="filter-by">
-      <p>Filter by</p>
-      <div class="popular-filters" id="filters">
-          <label><input type="checkbox" name="wifitttt" class="filter-checkbox" value="wifi"><i class="fa-solid fa-wifi"></i> Internet Wifi <pre></label>
-          <label><input type="checkbox" name="filter" class="filter-checkbox" value="tv"><i class="fa-solid fa-tv"></i> TV</label>
-          <label><input type="checkbox" name="filter" value="aircondition"><i class="fa-solid fa-wind"></i> AirCondition</label>
-          <label><input type="checkbox" name="filter" value="shower"><i class="fa-solid fa-shower"></i> Shower</label>
-          <label><input type="checkbox" name="filter" value="breakfast"><i class="fa-solid fa-mug-saucer"></i> Breakfast</label>
-      </div>
-    </div>
-
     
+      <div class="filter-by">
+        <p>Filter by</p>
+        <form action="{{ route('rooms.filter') }}" method="GET">
+        <div class="popular-filters" >
+            <label><input type="checkbox" name="wifi[]" class="filter-checkbox" value="wifi"><i class="fa-solid fa-wifi"></i> Internet Wifi <pre></label>
+            <label><input type="checkbox" name="tv[]" class="filter-checkbox" value="tv"><i class="fa-solid fa-tv"></i> TV</label>
+            <label><input type="checkbox" name="aircondition[]" value="airconditon"><i class="fa-solid fa-wind"></i> AirCondition</label>
+            <label><input type="checkbox" name="shower[]" value="shower"><i class="fa-solid fa-shower"></i> Shower</label>
+            <label><input type="checkbox" name="breakfast[]" value="breakfast"><i class="fa-solid fa-mug-saucer"></i> Breakfast</label>
+        </div>
+        <button class="sub" type="submit">Filter</button>
+        </form>
+      </div>
+    
+ 
     @foreach($rooms as $room)
         <!-- Display room information here -->
-        <div class="picture1">
-      <div class="image-button">
-              <div class="room" id="room1">
-                <img src="/css/images/1 (1).jpg">
-                <div class="heading">
-                  <h3><p> {{$room->name}} </p></h3>
-                </div>
-                  <!-- <h3><p> {{$room->wifi}} </p></h3> -->
-                <a href="modal">
-                  <p class="description">room detailes</p>
-                </a>
-                <p class="free">Free cancellation available</p>
-                <p class="free">Free cancellation available</p>
-                <p class="member">MEMBER DISCOUND </p>
-                <p class="only">Only 1room left</p>
-                <h4><p class="sale">40$</p></h4>
-                <p class="usd">USD per nigth </p>
-                
-                <p class="exc">Excludes taxes and fees</p>
-                <a class="price" href="reservation">
-                  <div>Booking</div>
-                </a>
-              </div>
-      </div> 
+        <div class="picture1" >
+          <div class="image-button">
+                  <div class="room" id="room1">
+                    <img src="/css/images/1 (1).jpg">
+                    <div class="heading">
+                      <h3><p> {{$room->name}} </p></h3>
+                    </div>
+                      <!-- <h3><p> {{$room->wifi}} </p></h3> -->
+                    <a href="modal">
+                      <p class="description">room detailes</p>
+                    </a>
+                    <p class="free">Free cancellation available</p>
+                    <p class="free">Free cancellation available</p>
+                    <p class="member">MEMBER DISCOUND </p>
+                    <p class="only">Only 1room left</p>
+                    <h4><p class="sale">40$</p></h4>
+                    <p class="usd">USD per nigth </p>
+                    
+                    <p class="exc">Excludes taxes and fees</p>
+                    <a class="price" href="reservation">
+                      <div>Booking</div>
+                    </a>
+                  </div>
+          </div> 
     
   </div>
-    @endforeach
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-$(document).ready(function() {
-    $('.filter-checkbox').change(function() {
-        var amenities = [];
-        $('.filter-checkbox:checked').each(function() {
-            amenities.push($(this).val());
-        });
-
-        $.ajax({
-            url: "{{ route('rooms.filter') }}",
-            method: "GET",
-            data: {amenities: amenities},
-            success: function(response) {
-                // Update the displayed rooms
-                $('#rooms').empty();
-                response.forEach(function($rooms) {
-                    $('#rooms').append('<div>' + room.wifi + '</div>');
-                });
-            }
-        });
-    });
-});
-</script>
-
     
+    @endforeach
 
     
 

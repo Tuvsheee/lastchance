@@ -29,8 +29,6 @@
                                                 <th>Өрөөний зураг</th>
                                                 <th>Start time room date:</th>
                                                 <th>End time room date:</th>
-                                                <th>Идэвхитэй эсэх</th>
-                                                <th>Шинэчлэх</th>
                                                 <th>Устгах</th>
                                             </tr>
                                         </thead>
@@ -45,9 +43,14 @@
                                                 <td><img src="{{asset($n->image)}}" ></td>
                                                 <td>{{$n->arrival_date}}</td>
                                                 <td>{{$n->departure_date}}</td>
-                                                <td>Идэвхитэй</td>
-                                                <td>Шинэчлэх</td>
-                                                <td>Устгах</td>
+                                                <td>
+                                                    <form action="{{ route('room.destroy', $n->id) }}" method="POST" type="button"  onsubmit="return confirm('Delete?')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger m-0">Delete</button>
+                                                    </form>
+                                                </td>
+                                                
                                             </tr>
                                             </div>
                                             @endforeach

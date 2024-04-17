@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('aircondition');
             $table->string('shower');
             $table->string('breakfast');
-            $table->string('amenities');
             $table->date('arrival_date');
             $table->date('departure_date');
             $table->integer('adults');

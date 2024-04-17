@@ -68,6 +68,30 @@ header{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+/* style.css */
+
+/* Button Styles */
+.sub {
+  background-color: #29e032; /* Green */
+  border: none;
+  color: #ffffff;
+  padding: 4px 20px;
+  text-align: center;
+  position: absolute;
+  font-size:15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  top: 20px;
+  left: 80px;
+
+}
+
+.sub:hover {
+  background-color: #45a049; /* Darker Green */
+}
+
 form {
   display: flex;
   flex-direction: row;

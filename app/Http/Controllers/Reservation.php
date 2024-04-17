@@ -35,13 +35,16 @@ class Reservation extends Controller
     {
         $payments = new Payment();
         $payments->firstname = $request->firstname;
-        $payments->lastname = $request->lastname;
         $payments->email = $request->email;
         $payments->country = $request->country;
         $payments->cityname = $request->cityname;
         $payments->address = $request->address;
         $payments->postalcode = $request->postalcode;
-        $payments->totalprice = $request->totalprice;
+        $payments->cardname = $request->cardname;
+        $payments->cardnumber = $request->cardnumber;
+        $payments->expmonth = $request->expmonth;
+        $payments->expyear = $request->expyear;
+        $payments->cvv = $request->cvv;
         $payments->save();
         return redirect()->route('psearch')->with('success', 'your payment successfully');
      

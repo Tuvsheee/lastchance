@@ -18,14 +18,12 @@
                                         <thead>
                                             <tr>
                                                 <th>№</th>
-                                                <th>First Name:</th>
-                                                <th>Last Name:</th>
+                                                <th>Full Name:</th>
                                                 <th>Email:</th>
                                                 <th>Country:</th>
                                                 <th>City:</th>
                                                 <th>Address:</th>
-                                                <th>Postal Code:</th>
-                                                <th>Total Price:</th>
+                                                <th>Zip code:</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -33,14 +31,11 @@
                                             <tr>
                                                 <td>{{$n->id}}</td>
                                                 <td>{{$n->firstname}}</td>
-                                                <td>{{$n->lastname}}</td>
                                                 <td>{{$n->email}}</td>
                                                 <td>{{$n->country}}</td>
                                                 <td>{{$n->cityname}}</td>
                                                 <td>{{$n->address}}</td>
                                                 <td>{{$n->postalcode}}</td>
-                                                <td>{{$n->totalprice}}</td>
-                                                
                                             </tr>
                                             @endforeach
                                         </tbody>

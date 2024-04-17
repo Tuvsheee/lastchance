@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Room; // Assuming Room model exists
 use App\Models\Booking; // Assuming Room model exists
 
+
 class Searchs extends Controller
 {
 
@@ -74,19 +75,45 @@ class Searchs extends Controller
         return view('mroom', compact('rooms'));
     }
 
-    public function filter(Request $request)
-    {
-        $amenities = $request->input('amenities', []);
-        
-        $rooms = Room::when($amenities, function ($query, $amenities) {
-            foreach ($amenities as $amenity) {
-                $query->where('amenities', 'like', '%' . $amenity . '%');
-            }
-        })->get();
-        
-        return view('mroom', compact('rooms'));
+    public function filter(Request $request){
+    $query = Room::query();
 
+    if ($request->has('wifi')) {
+        $query->whereIn('wifi', $request->input('wifi'));
     }
+
+    if ($request->has('tv')) {
+        $query->whereIn('tv', $request->input('tv'));
+    }
+    if ($request->has('aircondition')) {
+        $query->whereIn('aircondition', $request->input('aircondition'));
+    }
+
+    if ($request->has('shower')) {
+        $query->whereIn('shower', $request->input('shower'));
+    }
+
+    if ($request->has('breakfast')) {
+        $query->whereIn('breakfast', $request->input('breakfast'));
+    }
+
+    // Add more filters as needed
+
+    $rooms = $query->get();
+
+    return view('mroom', compact('rooms'));
+    }
+
+    public function destroy(string $id)
+    {
+        $rooms = Room::findOrFail($id);
+  
+        $rooms->delete();
+  
+        return redirect()->route('room')->with('success', 'product deleted successfully');
+    }
+
+
 }
 
 
