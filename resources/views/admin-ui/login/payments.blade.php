@@ -1,4 +1,4 @@
-@extends('admin-ui.layout.master')
+@extends('admin-ui.layout.dashboard')
 
 @section('top-section')
 <div class="row page-titles">

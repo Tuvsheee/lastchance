@@ -15,6 +15,18 @@ class AuthController extends Controller
     {
         return view('register');
     }
+    public function adminhome()
+    {
+        return view('admin-ui.layout.adminhome');
+    }
+    public function aregister()
+    {
+        return view('admin-ui.login.register');
+    }
+    public function alogin()
+    {
+        return view('admin-ui.login.adminlogin');
+    }
     
   
     public function registerSave(Request $request)
@@ -33,6 +45,23 @@ class AuthController extends Controller
         ]);
   
         return redirect()->route('login');
+    }
+    public function adminRegister(Request $request)
+    {
+        Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed'
+        ])->validate();
+  
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'level' => 'Admin'
+        ]);
+  
+        return redirect()->route('alogin');
     }
   
     public function login()
@@ -57,6 +86,23 @@ class AuthController extends Controller
   
         return redirect()->route('uhome');
     }
+    public function adminLogin(Request $request)
+    {
+        Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required'
+        ])->validate();
+  
+        if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
+            throw ValidationException::withMessages([
+                'email' => trans('auth.failed')
+            ]);
+        }
+  
+        $request->session()->regenerate();
+  
+        return redirect()->route('dash');
+    }
   
     public function logout(Request $request)
     {
@@ -64,7 +110,7 @@ class AuthController extends Controller
   
         $request->session()->invalidate();
   
-        return redirect('/');
+        return redirect()->route('uhome');
     }
 
     public function index()

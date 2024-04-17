@@ -43,7 +43,7 @@ class Reservation extends Controller
         $payments->postalcode = $request->postalcode;
         $payments->totalprice = $request->totalprice;
         $payments->save();
-        return redirect()->route('res_pay')->with('success', 'your payment successfully');
+        return redirect()->route('psearch')->with('success', 'your payment successfully');
      
     }
 

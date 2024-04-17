@@ -18,15 +18,16 @@
         <section class="book">
           <div class="container flex_space">
             <div class="form">
-              <form action="{{route('m_search')}}" method="POST">
+              <form action="{{route('psearch')}}" method="POST">
+              @csrf
                 <a class="nav-v2-logo" href="home">
                 <img src="/css/images/title1.png" alt="Marine Life" width="130" height="100">
               </a>
-                <input type="date" placeholder="Araival Date">
-                <input type="date" placeholder="Departure Date">
-                <input type="number" placeholder="Adults">
-                <input type="number" placeholder="Children">
-                <input type="submit" value="CHECK AVAILABILITY" >
+              <input type="date" name="arrival_date" placeholder="Arrival Date">
+              <input type="date" name="departure_date" placeholder="Departure Date">
+              <input type="number" name="adults" placeholder="Adults">
+              <input type="number" name="children" placeholder="Children">
+              <input type="submit" value="CHECK AVAILABILITY">
               </form>
               
             </div>
@@ -43,76 +44,73 @@
 
     <div class="filter-by">
       <p>Filter by</p>
-      <div class="popular-filters">
-        <form  method="GET">
-          <label><input type="checkbox" name="filter" value="internet"><i class="fa-solid fa-wifi"></i> Internet Wifi <pre></label>
-          <label><input type="checkbox" name="filter" value="tv"><i class="fa-solid fa-tv"></i> TV</label>
+      <div class="popular-filters" id="filters">
+          <label><input type="checkbox" name="wifitttt" class="filter-checkbox" value="wifi"><i class="fa-solid fa-wifi"></i> Internet Wifi <pre></label>
+          <label><input type="checkbox" name="filter" class="filter-checkbox" value="tv"><i class="fa-solid fa-tv"></i> TV</label>
           <label><input type="checkbox" name="filter" value="aircondition"><i class="fa-solid fa-wind"></i> AirCondition</label>
           <label><input type="checkbox" name="filter" value="shower"><i class="fa-solid fa-shower"></i> Shower</label>
           <label><input type="checkbox" name="filter" value="breakfast"><i class="fa-solid fa-mug-saucer"></i> Breakfast</label>
-          <button type="submit">Search</button>
-        </form>
       </div>
     </div>
 
-    <div class="picture1">
+    
+    @foreach($rooms as $room)
+        <!-- Display room information here -->
+        <div class="picture1">
       <div class="image-button">
               <div class="room" id="room1">
                 <img src="/css/images/1 (1).jpg">
                 <div class="heading">
-                  <h3><p> King Bed Standard </p></h3>
+                  <h3><p> {{$room->name}} </p></h3>
                 </div>
+                  <!-- <h3><p> {{$room->wifi}} </p></h3> -->
                 <a href="modal">
                   <p class="description">room detailes</p>
                 </a>
+                <p class="free">Free cancellation available</p>
                 <p class="free">Free cancellation available</p>
                 <p class="member">MEMBER DISCOUND </p>
                 <p class="only">Only 1room left</p>
                 <h4><p class="sale">40$</p></h4>
                 <p class="usd">USD per nigth </p>
+                
                 <p class="exc">Excludes taxes and fees</p>
                 <a class="price" href="reservation">
                   <div>Booking</div>
                 </a>
               </div>
       </div> 
-        <div class="image-button">
-          <div class="room" id="room2">
-          <img src="/css/images/1 (7).jpg">
-            <h3><p>Standard Room</p></h3>
-            <a href="">
-              <p class="description">room detailes</p>
-            </a>
-            <p class="free">Free cancellation available</p>
-            <p class="member">MEMBER DISCOUNT</p>
-            <p class="only">Only 1room left</p>
-            <h4><p class="sale">34$</p></h4>
-            <p class="usd">USD per nigth </p>
-            <p class="exc">Excludes taxes and fees</p>
-            <a class="price" href="reservation">
-                <div>Booking</div>
-              </a>
-          </div>
-        </div>
-        <div class="image-button">
-          <div class="room" id="room3">
-            <img src="/css/images/s3.png" alt="Room 3 Image">
-            <h3><p>King Bed Standard City View</p></h3>
-            <a href="">
-              <p class="description">room detailes</p>
-            </a>
-            <p class="free">Free cancellation available</p>
-            <p class="member">MEMBER DISCOUNT</p>
-            <p class="only">Only 1room left</p>
-            <h4><p class="sale">37$</p></h4>
-            <p class="usd">USD per nigth </p>
-            <p class="exc">Excludes taxes and fees</p>
-            <a class="price" href="reservation">
-                <div>Booking</div>
-              </a>
-          </div>
-        </div>
+    
   </div>
+    @endforeach
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function() {
+    $('.filter-checkbox').change(function() {
+        var amenities = [];
+        $('.filter-checkbox:checked').each(function() {
+            amenities.push($(this).val());
+        });
+
+        $.ajax({
+            url: "{{ route('rooms.filter') }}",
+            method: "GET",
+            data: {amenities: amenities},
+            success: function(response) {
+                // Update the displayed rooms
+                $('#rooms').empty();
+                response.forEach(function($rooms) {
+                    $('#rooms').append('<div>' + room.wifi + '</div>');
+                });
+            }
+        });
+    });
+});
+</script>
+
+    
 
     
 

@@ -141,6 +141,17 @@ select {
   
 }
 
+.fsubmit{
+  position: absolute;
+  bottom: 550px;
+  background-color: #6ac01a;
+  color: white;
+  border-radius:15px ;
+  border: 1px #6ac01a;
+  padding: 5px;
+
+}
+
 .room p {
   position: absolute;
   top: 10%;

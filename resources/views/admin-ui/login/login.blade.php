@@ -1,4 +1,4 @@
-@extends('admin-ui.layout.master')
+@extends('admin-ui.layout.dashboard')
 
 @section('top-section')
 <div class="row page-titles">
@@ -7,7 +7,7 @@
                     </div>
                 </div>
 @endsection
-
+    
 @section('body-section')
 <div class="row">
                     <!-- column -->
