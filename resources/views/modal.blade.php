@@ -587,7 +587,8 @@ Image gallery START -->
 							<!-- Progress bar and rating END -->
 
 							<!-- Leave review START -->
-							<form class="mb-5">
+							<form class="mb-5" action="{{ route('reviews.store') }}" method="POST">
+
 								<!-- Rating -->
 								<div class="form-control-bg-light mb-3">
 									<select class="form-select js-choice">
@@ -609,6 +610,8 @@ Image gallery START -->
 
 							<!-- Review item START -->
 							<div class="d-md-flex my-4">
+							@csrf
+
 								<!-- Avatar -->
 								<div class="avatar avatar-lg me-3 flex-shrink-0">
 									<img class="avatar-img rounded-circle"  src="/css/images/1 (4).jpg" alt="avatar">

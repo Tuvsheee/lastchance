@@ -7,6 +7,7 @@ use App\Http\Controllers\Register;
 use App\Http\Controllers\Reservation;
 use App\Http\Controllers\Searchs;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Review;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,6 +77,10 @@ Route::controller(AuthController::class)->group(function () {
 Route::delete('destroy/{id}',[AuthController::class, 'destroy'])->name('user.destroy');
 Route::delete('destroy/room/{id}',[Searchs::class, 'destroy'])->name('room.destroy');
  
+
+Route::get('modal', [Review::class, 'modal'])->name('modal');
+Route::post('modal', [Review::class, 'store'])->name('reviews.store');
+
 
 
 
