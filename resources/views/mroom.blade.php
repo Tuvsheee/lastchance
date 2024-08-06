@@ -46,11 +46,11 @@
         <p>Filter by</p>
         <form action="{{ route('rooms.filter') }}" method="GET">
         <div class="popular-filters" >
-            <label><input type="checkbox" name="wifi[]" class="filter-checkbox" value="wifi"><i class="fa-solid fa-wifi"></i> Internet Wifi <pre></label>
-            <label><input type="checkbox" name="tv[]" class="filter-checkbox" value="tv"><i class="fa-solid fa-tv"></i> TV</label>
-            <label><input type="checkbox" name="aircondition[]" value="airconditon"><i class="fa-solid fa-wind"></i> AirCondition</label>
-            <label><input type="checkbox" name="shower[]" value="shower"><i class="fa-solid fa-shower"></i> Shower</label>
-            <label><input type="checkbox" name="breakfast[]" value="breakfast"><i class="fa-solid fa-mug-saucer"></i> Breakfast</label>
+            <label><input type="checkbox" name="wifi[]" class="filter-checkbox" value="1"><i class="fa-solid fa-wifi"></i> Internet Wifi <pre></label>
+            <label><input type="checkbox" name="tv[]" class="filter-checkbox" value="1"><i class="fa-solid fa-tv"></i> TV</label>
+            <label><input type="checkbox" name="aircondition[]" value="1"><i class="fa-solid fa-wind"></i> AirCondition</label>
+            <label><input type="checkbox" name="shower[]" value="1"><i class="fa-solid fa-shower"></i> Shower</label>
+            <label><input type="checkbox" name="breakfast[]" value="1"><i class="fa-solid fa-mug-saucer"></i> Breakfast</label>
         </div>
         <button class="sub" type="submit">Filter</button>
         </form>

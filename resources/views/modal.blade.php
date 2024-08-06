@@ -32,7 +32,6 @@
 						<!-- Location -->
 						<p class="fw-bold mb-0"><i class="bi bi-geo-alt me-2"></i>Ulaanbaator, Sukhbaator district, 1st khoroo 32-1-15 
 							<a href="#" class="ms-2 text-decoration-underline" data-bs-toggle="modal" data-bs-target="#mapmodal">
-								<i class="bi bi-eye-fill me-1"></i>View On Map
 							</a>
 						</p>
 					</div>
@@ -399,7 +398,7 @@ Image gallery START -->
 													</div>
 													<!-- Price -->
 													<div class="mt-3 mt-sm-0">
-														<a href="#" class="btn btn-sm btn-primary mb-0">Select Room</a>    
+														<a href="reservation" class="btn btn-sm btn-primary mb-0">Select Room</a>    
 													</div>                  
 												</div>
 											</div>
@@ -466,7 +465,7 @@ Image gallery START -->
 													</div>
 													<!-- Price -->
 													<div class="mt-3 mt-sm-0">
-														<a href="#" class="btn btn-sm btn-primary mb-0">Select Room</a>    
+														<a href="reservation" class="btn btn-sm btn-primary mb-0">Select Room</a>    
 													</div>                  
 												</div>
 											</div>
@@ -587,25 +586,6 @@ Image gallery START -->
 							<!-- Progress bar and rating END -->
 
 							<!-- Leave review START -->
-							<form class="mb-5" action="{{ route('reviews.store') }}" method="POST">
-
-								<!-- Rating -->
-								<div class="form-control-bg-light mb-3">
-									<select class="form-select js-choice">
-										<option selected="">★★★★★ (5/5)</option>
-										<option>★★★★☆ (4/5)</option>
-										<option>★★★☆☆ (3/5)</option>
-										<option>★★☆☆☆ (2/5)</option>
-										<option>★☆☆☆☆ (1/5)</option>
-									</select>
-								</div>
-								<!-- Message -->
-								<div class="form-control-bg-light mb-3">
-									<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Your review" rows="3"></textarea>
-								</div> 
-								<!-- Button -->
-								<button type="submit" class="btn btn-lg btn-primary mb-0">Post review <i class="bi fa-fw bi-arrow-right ms-2"></i></button>
-							</form>
 							<!-- Leave review END -->
 
 							<!-- Review item START -->

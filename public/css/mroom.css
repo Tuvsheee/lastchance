@@ -369,3 +369,41 @@ h1{
 }
 
 
+
+@media only screen and (max-width: 900px) {
+  /* Add your responsive styles here */
+  .form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  .form-group {
+      flex-basis: calc(50%-10px);
+      
+  }
+  .room p {
+      left: 50%;
+  }
+
+
+  input[type="date"],
+  input[type="number"] {
+      width:100%;
+      margin-right: 5px 0;
+  }
+  input[type="submit"] {
+    width: auto; /* Adjust button width */
+}
+
+  .book {
+      padding: 10px;
+  }
+
+  .book h1 {
+      font-size: 24px;
+  }
+  .filter-by{
+    left: 20px;
+  }
+  
+}

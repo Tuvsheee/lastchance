@@ -40,14 +40,14 @@
                                                 <td>{{$n->name}}</td>
                                                 <td>{{$n->capacity}}</td>
                                                 <td>{{$n->room_id}}</td>
-                                                <td><img src="{{asset($n->image)}}" ></td>
+                                                <td><img src="{{asset($n->image)}}" width="150px"></td>
                                                 <td>{{$n->arrival_date}}</td>
                                                 <td>{{$n->departure_date}}</td>
                                                 <td>
                                                     <form action="{{ route('room.destroy', $n->id) }}" method="POST" type="button"  onsubmit="return confirm('Delete?')">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-danger m-0">Delete</button>
+                                                        <button class="btn btn-danger m-0">Устгах</button>
                                                     </form>
                                                 </td>
                                                 
